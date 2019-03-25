@@ -74,8 +74,8 @@ SET Citation = {"PubMed", "25652642"}
 
 SET Evidence = "Advances in molecular pathogenesis suggest that the chronic inflammation is a shared mechanism in the initiation and progression of multiple neurodegenerative diseases with diverse clinical manifestations such as Alzheimer’s disease (AD) and multiple sclerosis (MS)."
 
-bp(GO: "Chronic inflammatory response" ) pos path(MESH: "Alzhimer's Disease")
-bp(GO: "Chronic inflammatory response" ) pos path(MESH: "Multiple sclerosis")
+bp(GO:"Chronic inflammatory response") pos path(MESH: "Alzhimer's Disease")
+bp(GO:"Chronic inflammatory response") pos path(MESH: "Multiple sclerosis")
 
 SET Evidence ="A predominant consequence of increased inflammatory signaling is the upregulation of the transcription factor, nuclear factor-kappa B (NF–κB) with subsequent neuroprotective or deleterious effects depending on the strength of the signal and the type of NF–κB dimers activated."
 
