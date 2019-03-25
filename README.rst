@@ -1,5 +1,5 @@
-Enzyme Technology Internship 2019
-=================================
+Enzyme Technology Internship 2019 |build|
+=========================================
 
 Installation
 ------------
@@ -22,3 +22,6 @@ All code and data lives inside the ``src/`` folder. Inside it are the following 
 
 - **bel**: Where source BEL script and their corresponding compiled artifacts are stored. They can be accessed with
   ``enzt2019-knowledge``.
+  
+.. |build| image:: https://travis-ci.com/bit-lsi/ENZT2019.svg?branch=master
+    :target: https://travis-ci.com/bit-lsi/ENZT2019
