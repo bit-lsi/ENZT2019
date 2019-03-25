@@ -1,0 +1,250 @@
+#######################
+# Document Properties #
+#######################
+SET DOCUMENT Copyright   = "Copyright © 2019 Fraunhofer Institute SCAI, All rights reserved."
+SET DOCUMENT Licenses    = "CC BY 4.0"
+SET DOCUMENT ContactInfo = ""
+
+SET DOCUMENT Name        = "The Role of Insulin/IGF-1/PI3K/Akt/GSK3β Signaling in Parkinson’s Disease Dementia"
+SET DOCUMENT Version     = "1.0.0"
+SET DOCUMENT Authors     = "Esther Wollert"
+SET DOCUMENT Description = "This file encodes the article The Role of Insulin/IGF-1/PI3K/Akt/GSK3β Signaling in Parkinson’s Disease Dementia by Yang et al, 2018"
+
+##############
+# Namespaces #
+##############
+
+# Namespaces hosted on https://github.com/pharmacome/terminology
+# --------------------------------------------------------------
+DEFINE NAMESPACE CHEBI          AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/chebi-names.belns"
+DEFINE NAMESPACE DRUGBANK       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/drugbank-names.belns"
+DEFINE NAMESPACE DOID           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/doid-names.belns"
+DEFINE NAMESPACE ECCODE         AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/ec-code.belns"
+DEFINE NAMESPACE FB             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/fb-names.belns"
+DEFINE NAMESPACE HBP            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/export/hbp-names.belns"
+DEFINE NAMESPACE HGNC           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc-names.belns"
+DEFINE NAMESPACE HGNCGENEFAMILY AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc.genefamily-names.belns"
+DEFINE NAMESPACE HP             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hp-names.belns"
+DEFINE NAMESPACE GO             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/go-names.belns"
+DEFINE NAMESPACE INTERPRO       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/interpro-names.belns"
+DEFINE NAMESPACE MESH           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mesh-names.belns"
+DEFINE NAMESPACE MGI            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mgi-names.belns"
+DEFINE NAMESPACE MIRBASE        AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mirbase-names.belns"
+DEFINE NAMESPACE NCBIGENE       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/entrez.belns"
+DEFINE NAMESPACE PFAM           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/pfam-names.belns"
+DEFINE NAMESPACE RGD            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/rgd-names.belns"
+
+# Namespaces hosted on https://github.com/sorgerlab/famplex
+# ---------------------------------------------------------
+DEFINE NAMESPACE FPLX           AS URL "https://raw.githubusercontent.com/sorgerlab/famplex/d9ec0526c20795146a9a6aef17496efe1a36cac6/export/famplex.belns"
+
+# Namespaces defined with regular expressions
+# -------------------------------------------
+DEFINE NAMESPACE DBSNP          AS PATTERN "rs[0-9]+"
+DEFINE NAMESPACE TAXONOMY       AS PATTERN "^\d+$"
+DEFINE NAMESPACE UNIPROT        AS PATTERN "^([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?$"
+DEFINE NAMESPACE PUBCHEM        AS PATTERN "^\d+$"
+
+DEFINE NAMESPACE FIXME AS LIST {"unknown term"}
+
+###############
+# Annotations #
+###############
+
+# Annotations defined with regular expressions
+# --------------------------------------------
+DEFINE ANNOTATION Species       AS PATTERN "^\d+$"
+
+# Annotations hosted on https://arty.scai.fraunhofer.de/artifactory/bel/annotation
+# --------------------------------------------------------------------------------
+DEFINE ANNOTATION Anatomy       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/anatomy/anatomy-20170511.belanno"
+DEFINE ANNOTATION CellLine      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell-line/cell-line-20170511.belanno"
+DEFINE ANNOTATION CellStructure AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell-structure/cell-structure-20170511.belanno"
+DEFINE ANNOTATION Cell          AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell/cell-20170511.belanno"
+DEFINE ANNOTATION Confidence    AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/confidence/confidence-1.0.0.belanno"
+DEFINE ANNOTATION Disease       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/disease/disease-20170511.belanno"
+DEFINE ANNOTATION Gender        AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/gender/gender-1.0.0.belanno"
+DEFINE ANNOTATION MeSHAnatomy   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-anatomy/mesh-anatomy-20170511.belanno"
+DEFINE ANNOTATION MeSHDisease   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-diseases/mesh-diseases-20170511.belanno"
+DEFINE ANNOTATION Subgraph      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/neurommsig/neurommsig-1.0.3.belanno"
+DEFINE ANNOTATION TextLocation  AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/text-location/text-location-1.0.1.belanno"
+
+##############
+# Statements #
+##############
+SET Citation = {"PubMed", "29515352"}
+
+SET Evidence = "Parkinson’s disease (PD), a major neurodegenerative disorder, is caused by dopaminergic neuronal
+loss in the substantia nigra as well as the formation of intracellular inclusion bodies, also known
+as Lewy bodies."
+path(MESH:"Parkinson Disease") isA path(MESH:"Neurodegenerative Diseases")
+SET MeSHAnatomy = "Substantia Nigra"
+SET Cell = "dopaminergic neuron"
+path(HP:Neurodegeneration) -> path(MESH:"Parkinson Disease")
+UNSET MeSHAnatomy
+a(MESH:"Lewy Bodies") -> path(MESH:"Parkinson Disease")
+
+SET Evidence = "In addition to the classic motor dysfunction symptoms of PD, non-movement
+disorders involving cognitive deﬁcits and dementia are increasingly acknowledged as core
+symptoms of PD."
+path(MESH:"Parkinson Disease") -| bp(GO:"motor activity")
+path(MESH:"Parkinson Disease") -| bp(GO:cognition)
+path(MESH:"Parkinson Disease") -> path(MESH:Dementia)
+
+SET Evidence = "Parkinson’s disease dementia (PDD) has been reported across the entire course
+of PD but is particularly prevalent in advanced stages, resulting in high morbidity and mortality in
+approximately 80–90% by the age of 90 (Gratwicke et al., 2015)."
+SET MeSHDisease = "Parkinson Disease"
+path(MESH:Dementia) -> bp(MESH:Mortality)
+path(MESH:Dementia) -> bp(MESH:Morbidity)
+UNSET MeSHDisease
+
+SET Evidence = "Lewy
+bodies, neuroﬁbrillary tangles (NFTs) and senile plaques may all
+contribute to the heterogeneous cellular pathology observed in
+cases of PDD (Wang et al., 2010)."
+SET MeSHDisease = "Parkinson Disease"
+path(MESH:Dementia) -- a(MESH:"Lewy Bodies")
+path(MESH:Dementia) -- a(MESH:"Neurofibrillary Tangles")
+path(MESH:Dementia) -- a(MESH:"Plaque, Amyloid")
+UNSET MeSHDisease
+
+SET Evidence = "Interestingly, one of the most
+important recent ﬁndings is the link between PDD pathogenesis
+and the mechanisms underlying the development of insulin
+resistance; studies have found that patients with PDD are prone
+to comorbid insulin resistance (Bosco et al., 2012; Ashraghi et al.,
+2016), even when they were unaﬀected by Diabetes Mellitus."
+path(MESH:"Parkinson Disease") neg bp(GO:"response to insulin")
+
+SET Evidence = "Furthermore, it has proven that Diabetes Mellitus increases
+the risk of developing Alzheimer’s disease (AD)."
+path(MESH:"Diabetes Mellitus") -> path(MESH:"Alzheimer Disease")
+
+SET Evidence = "PDD clinically manifests as executive dysfunction, faulty
+recognition memory, visual hallucinations and cognitive
+ﬂuctuations."
+SET MeSHDisease = "Parkinson Disease"
+path(MESH:Dementia) -| bp(MESH:"Executive Function")
+path(MESH:Dementia) -| bp(GO:memory)
+#path(MESH:Dementia) -- bp(GO:"visual perception")
+path(MESH:Dementia) -- bp(GO:cognition)
+UNSET MeSHDisease
+
+SET Evidence = "Notably, the manifestation of executive dysfunction
+emerges at the early stage of or even prior to the onset of PD
+motor symptoms."
+path(MESH:"Parkinson Disease") -| bp(GO:"motor behavior")
+
+SET Evidence = "Alpha-synuclein accumulation is associated with signiﬁcant
+neuronal dysfunction."
+a(HBP:"alpha-synuclein aggregates") -- act(a(MESH:Neurons))
+
+SET Evidence = " Compared with non-demented PD, PDD
+presents a distinct increase in α-synuclein pathology and a
+signiﬁcant reduction in dopaminergic and cholinergic activity in
+cortical and hippocampal neurons (Hall et al., 2014)."
+SET MeSHAnatomy = {"Cerebral Cortex", "Hippocampus"}
+SET Cell = "neuron"
+SET MeSHDisease = "Parkinson Disease"
+path(MESH:Dementia) pos a(HBP:"alpha-synuclein aggregates")
+path(MESH:Dementia) -| bp(GO:"synaptic transmission, dopaminergic")
+path(MESH:Dementia) -| bp(GO:"synaptic transmission, cholinergic")
+UNSET MeSHDisease
+UNSET Cell
+UNSET MeSHAnatomy
+
+SET Evidence = "Recent study has
+suggested that a major trigger of the development of PDD is the
+accumulation of Lewy bodies in the cortex and limbic system
+(Irwin et al., 2013)."
+SET MeSHAnatomy = {"Cerebral Cortex", "Limbic System"}
+SET MeSHDisease = "Parkinson Disease"
+a(MESH:"Lewy Bodies") -> path(MESH:Dementia)
+UNSET MeSHAnatomy
+UNSET MeSHDisease
+
+SET Evidence = "Furthermore, signiﬁcant Alzheimer-type
+pathologies, including amyloid-β (Aβ) plaques and NFTs, are
+also observed in patients with PDD (Irwin et al., 2013; Compta
+et al., 2014)."
+SET MeSHDisease = "Parkinson Disease"
+a(HBP:"amyloid-beta aggregates") pos path(MESH:Dementia)
+a(MESH:"Neurofibrillary Tangles") pos path(MESH:Dementia)
+UNSET MeSHDisease
+
+SET Evidence = "Another study indicated that
+decreased Aβ and increased tau in the cerebrospinal ﬂuid were
+predictors of PDD."
+SET MeSHDisease = "Parkinson Disease"
+SET MeSHAnatomy = "Cerebrospinal Fluid"
+a(CHEBI:"amyloid-beta") neg path(MESH:Dementia)
+p(HGNC:MAPT) pos path(MESH:Dementia)
+UNSET MeSHDisease
+UNSET MeSHAnatomy
+
+SET Evidence = " The most prominent pathological feature of
+PD, Lewy body formation, is also detected in cases of advanced
+AD. "
+a(MESH:"Lewy Bodies") pos path(MESH:"Alzheimer Disease")
+
+SET Evidence = "Recently, impairment of insulin signaling has been found to
+increase the risk of AD (Craft et al., 2012; Talbot et al., 2012;
+Hölscher, 2014) and PD (Morris et al., 2008; Bosco et al.,
+2012; Ashraghi et al., 2016; Pang et al., 2016)."
+bp(GO:"insulin receptor signaling pathway") -| path(MESH:"Alzheimer Disease")
+bp(GO:"insulin receptor signaling pathway") -| path(MESH:"Parkinson Disease")
+
+SET Evidence = "A case control
+study illustrated that PDD patients had a higher prevalence of
+abnormal glucose metabolism, mainly insulin resistance, than
+non-demented PD patients (Bosco et al., 2012). "
+SET MeSHDisease = "Parkinson Disease"
+path(MESH:Dementia) pos path(MESH:"Insulin Resistance")
+UNSET MeSHDisease
+
+SET Evidence = " Insulin
+crosses the blood–brain barrier and is internalized by neurons
+to activate several signaling pathways via binding to insulin
+receptor (IR) and activating insulin receptor substrate-1 (IRS-
+1)."
+complex(p(HGNC:INS),p(HGNC:INSR)) -> act(p(HGNC:IRS1))
+
+SET Evidence = "Through binding with IR, insulin aﬀects glycometabolism and
+food intake."
+complex(p(HGNC:INS),p(HGNC:INSR)) -- bp(GO:"carbohydrate metabolic process")
+complex(p(HGNC:INS),p(HGNC:INSR)) -- a(MEHS:Eating)
+
+SET Evidence = "In the central nervous system, insulin plays a
+role in learning and memory processes and is associated
+with hippocampal long-term potentiation (LTP) facilitated by
+insulin (Lee et al., 2005)."
+SET MeSHAnatomy = "Central Nervous System"
+p(HGNC:INS) -- bp(GO:learning)
+p(HGNC:INS) -- bp(GO:memory)
+SET MeSHAnatomy = "Hippocampus"
+p(HGNC:INS) -> bp(GO:"long-term synaptic potentiation")
+UNSET Hippocampus
+
+SET Evidence = "Insulin treatment has been shown
+to have a positive eﬀect on nervous system development and
+growth, and can alleviate and repair damage caused by the
+inﬂammation response."
+p(HGNC:INS) -> bp(GO:"nervous system development")
+p(HGNC:INS) -> bp(GO:"central nervous system formation")
+bp(GO:"inflammatory response") -| bp(GO:"neuron cellular homeostasis")
+SET MeSHDisease = "Inflammation"
+p(HGNC:INS) -> bp(GO:"neuron cellular homeostasis")
+UNSET MeSHDisease
+
+SET Evidence = "The neurogrowth and neurotrophic factor IGF-1, a 70 amino
+acid protein, has been conﬁrmed to exert a neuroprotective and
+proliferative function through the promotion of cell survival,
+prevention of apoptosis, and stimulation of neurogenesis in
+regions such as the hippocampus."
+p(HGNC:IGF1) -> a(MESH:Neuroprotection)
+p(HGNC:IGF1) -> bp(GO:"generation of neurons")
+p(HGNC:IGF1) -| bp(GO:"neuron apoptotic process")
+SET MeSHAnatomy = "Hippocampus"
+p(HGNC:IGF1) -> bp(GO:"neurogenesis")
+UNSET MeSHAnatomy
