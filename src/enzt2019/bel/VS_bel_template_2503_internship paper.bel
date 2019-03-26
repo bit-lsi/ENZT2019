@@ -100,18 +100,18 @@ a(CHEBI:demethoxycurcumin) decreases bp(GO: "inflammatory response")
 UNSET Cell
 
 SET Evidence = "Structural polymorphism with an amino acid change from cysteine to arginine in position 738 in exon-4 of IκBL, is associated with predisposition to MS."
-p(HGNC:NFKBIL1, var(p.Cys738Arg)) association path(GO: "Multiple Sclerosis")
+p(HGNC:NFKBIL1, var(p.Cys738Arg)) association path(MESH:"Multiple Sclerosis")
 
 SET Evidence = "Suppression of NF-κB by CNS restricted ablation of NEMO or IKKβ has been shown to ameliorate EAE"
 SET Anatomy = {"central nervous system"}
-act(complex(GO:"NF-kappaB complex")) decreases (p(HGNC:IKBKG)
+act(complex(GO:"NF-kappaB complex")) decreases p(HGNC:IKBKG)
 act(complex(GO:"NF-kappaB complex")) decreases p(HGNCGENEFAMILY:"NF-kappa B complex subunits")
 UNSET Anatomy
 
 SET Evidence = "For example, BTRC, β-transducin repeat containing protein, a RING E3 protein that mediates ubiquitination of IκBα is one of the genes upregulated in T cells in MS relapse"
 SET Cell = {"T cell"}
 p(HGNC:BTRC) association p(HGNC:NFKBIA, pmod(U))
-path(GO: "Multiple Sclerosis") increases g(HGNC:BTRC)
+path(MESH:"Multiple Sclerosis") increases g(HGNC:BTRC)
 UNSET Cell
 
 SET Evidence = "More recently modulation of the immuno-inflammatory transcriptome by the NF-κB regulated miRNAs has been implicated in the pathogenesis of RRMS."
