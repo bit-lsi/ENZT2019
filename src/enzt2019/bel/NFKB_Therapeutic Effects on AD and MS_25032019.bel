@@ -75,7 +75,7 @@ SET Disease = {"Alzheimer's Disease","multiple sclerosis"}
 SET NervousSystem = {"Neurons", "Neuronal Cells"}
 
 SET Evidence = "the NF-κB/Rel family comprises five members; p50, p52, p65 (Rel-A), c-Rel and Rel-B proteins, that form homo or hetero-dimers and remain in an inactive form in complex with the inhibitory molecules called the IκB proteins"
-a(complex(p(HGNCGENEFAMILY:"NF-kappa B complex subunits"), p(HGNCGENEFAMILY:"I kappa B kinases"))) =| act(p(HGNCGENEFAMILY:"NF-kappa B complex subunits"))
+act(complex(p(HGNCGENEFAMILY:"NF-kappa B complex subunits"), p(HGNCGENEFAMILY:"I kappa B kinases"))) =| act(p(HGNCGENEFAMILY:"NF-kappa B complex subunits"))
 
 SET Evidence = "Activation of IKK leads to IKKβ mediated phosphorylation of IκB proteins followed by ubiquitination and degradation by proteasomes releasing the NF–κB dimers from the inhibitory complex."
 act(a(HGNCGENEFAMILY: "IKK complex")) -> p(HGNCGENEFAMILY:"I kappa B kinases", pmod(P))
