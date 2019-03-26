@@ -85,19 +85,25 @@ UNSET MeSHAnatomy
 SET Evidence = "Pathologically AD affected brain exhibits deposits of amyloid-beta (Aß)as neuritic plaques (NPs) and
 hyperphosphorylated aggregated tau protein as neurofibrillary tangles (NFTs)."
 
-path(MESH:"Alzheimer Disease") -> path a(MESH:"Plaque, Amyloid")
-path(MESH:"Alzheimer Disease") -> path p(HGNC:MAPT, pmod(P))
+path(MESH:"Alzheimer Disease") -> a(MESH:"Plaque, Amyloid")
+path(MESH:"Alzheimer Disease") -> p(HGNC:MAPT, pmod(P))
 
 SET Evidence = "Aβ is produced by proteolytic cleavage of amyloid precursor protein (APP) by β and γ-secretase"
 
-p(FPLX:"Gamma_secretase") -> reaction(reactants(a(HGNC:APP)),products(a(CHEBI:"amyloid-beta")))
-p(FPLX:"Beta_secretase") -> reaction(reactants(a(HGNC:APP)),products(a(CHEBI:"amyloid-beta")))
+p(FPLX:"Gamma_secretase") -> reaction(reactants(p(HGNC:APP)),products(a(CHEBI:"amyloid-beta")))
+p(HGNCGENEFAMILY:"BACE1") -> reaction(reactants(p(HGNC:APP)),products(a(CHEBI:"amyloid-beta")))
 
 SET Evidence = "In neuronal cells Aβ1-42 peptide has been shown to regulate APP and BACE1 proteins in NF-κB dependent manner"
 
 SET MeSHAnatomy= "Neurons"
-a(CHEBI: "amyloid-β polypeptide 42") reg a(HGNC:APP)
-a(CHEBI: "amyloid-β polypeptide 42") reg a(HGNC:BACE1)
+a(CHEBI: "amyloid-beta polypeptide 42") reg p(HGNC:APP)
+a(CHEBI: "amyloid-beta polypeptide 42") reg p(HGNCGENEFAMILY:BACE1)
 UNSET MeSHAnatomy
 
-SET Evidence = ""
+SET Evidence ="Excessive accumulation of Aβ1-42 stimulates microglial cells by signaling via receptor associated advanced glycation end products (RAGE)
+and peroxisome proliferator-activated receptor-γ (PPAR-γ), phosphorylates IKK proteins, and enhances NF-κB mediated transactivation of inflammatory
+ cytokines and neurotoxic molecules such as glutamate and reactive oxygen species (ROS)/induced nitric oxide synthase (iNOS)"
+SET Cell= "microglial cell"
+a(CHEBI: "amyloid-beta polypeptide 42") -> a(CHEBI: "advanced glycation end-product")
+a(CHEBI: "amyloid-beta polypeptide 42") -> p(HGNC:"PPARG")
+a(CHEBI: "amyloid-beta polypeptide 42") -> p(HGNCGENEFAMILY:IKK,pmod(P))
