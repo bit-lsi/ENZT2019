@@ -77,9 +77,9 @@ SET Evidence = "In conditional neuronal NF-
 -deficient mice, loss of NF-
 signaling impaired synaptic
 transmission, spatial memory formation, and plasticity"
-deg(bp(GO:"NIK/NF-kappaB signaling")) decreases a(MESH:"Synaptic Transmission")
-deg(bp(GO:"NIK/NF-kappaB signaling")) decreases a(MESH:"Spatial Memory")
-deg(bp(GO:"NIK/NF-kappaB signaling")) decreases a(MESH:"Neuronal Plasticity")
+bp(GO:"NIK/NF-kappaB signaling") increases a(MESH:"Synaptic Transmission")
+bp(GO:"NIK/NF-kappaB signaling") increases a(MESH:"Spatial Memory")
+bp(GO:"NIK/NF-kappaB signaling") increases a(MESH:"Neuronal Plasticity")
 
 SET Evidence = "Stimulation with the Aβ25-35 fragments induces secretion of cytokines such as TNF-α and of neurotrophic factors such as nerve growth factor (NGF) and brain derived nerve factor (BDNF) in NF-κB-dependent manner"
 p(HGNC:APP, frag("25_35")) increases sec(p(HGNC:TNF))
