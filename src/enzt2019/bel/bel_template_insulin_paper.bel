@@ -70,7 +70,7 @@ DEFINE ANNOTATION Species       AS PATTERN "^\d+$"
 ##############
 # Statements #
 ##############
-SET Citation = {"PubMed", ""}
+SET Citation = {"PubMed", "29515352"}
 
 SET Evidence = "Dementia, a condition that frequently afflicts patients in advanced stages of Parkinson’s
 disease (PD), results in decreased quality of life and survival time"
@@ -89,7 +89,7 @@ SET Evidence = "In addition, significant Alzheimer-type pathologies, including a
 plaques and NFTs, are observed in almost half of PDD patients."
 SET MeSHDisease = "Parkinson Disease"
 a(CHEBI:"amyloid-beta") pos path(MESH:"Dementia")
-a(MeSH:"Neurofibrillary Tangles") pos path(MESH:"Dementia")
+a(MESH:"Neurofibrillary Tangles") pos path(MESH:"Dementia")
 UNSET MeSHDisease
 
 SET Evidence = "Interestingly, links
@@ -107,7 +107,7 @@ SET Species = "10116"
 SET MeSHDisease = "Parkinson Disease"
 a(CHEBI:"insulin (human)") -| a(CHEBI:"amyloid-beta")
 a(CHEBI:"insulin (human)") reg a(CHEBI:"dopamine")
-a(CHEBI:"insulin (human)") -> a(GO:"motor behavior")
+a(CHEBI:"insulin (human)") -> bp(GO:"motor behavior")
 UNSET Species
 UNSET MeSHDisease
 
@@ -127,5 +127,5 @@ in these rodents, including AD and PD."
 SET MeSHAnatomy = "Cerebral Cortex", "Hippocampus"
 SET Species = "10116"
 p(HGNC:"GSK3B") -> path(HP:"Neurodegeneration")
-p(HGNC:"GSK3B") -| path(HP:"Spatial Learning")
+p(HGNC:"GSK3B") -| path(MESH:"Spatial Learning")
 p(HGNC:"GSK3B") -> path(MESH:"Cognitive Dysfunction")
