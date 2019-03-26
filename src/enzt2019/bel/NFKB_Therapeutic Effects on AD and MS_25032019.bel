@@ -73,12 +73,21 @@ DEFINE ANNOTATION TextLocation  AS URL "https://arty.scai.fraunhofer.de/artifact
 SET Citation = {"PubMed", "25652642"}
 SET Disease = {"Alzheimer's Disease","multiple sclerosis"}
 #SET NervousSystem = {"Neurons", "Neuronal Cells"}
-
+SET Species = "9606"
 SET Evidence = "the NF-κB/Rel family comprises five members; p50, p52, p65 (Rel-A), c-Rel and Rel-B proteins, that form homo or hetero-dimers and remain in an inactive form in complex with the inhibitory molecules called the IκB proteins"
-act(complex(p(HGNCGENEFAMILY:"NF-kappa B complex subunits"), p(HGNCGENEFAMILY:"I kappa B kinases"))) =| act(p(HGNCGENEFAMILY:"NF-kappa B complex subunits"))
+fus(complex(a(complex(p(HGNC:"NFKB1"),p(HGNC:"RELA"))), p(HGNCGENEFAMILY:"I kappa B kinases"))) =| act(a(complex(p(HGNC:"NFKB1"),p(HGNC:"RELA"))))_
 
 SET Evidence = "Activation of IKK leads to IKKβ mediated phosphorylation of IκB proteins followed by ubiquitination and degradation by proteasomes releasing the NF–κB dimers from the inhibitory complex."
 act(a(HGNCGENEFAMILY: "IKK complex")) -> p(HGNCGENEFAMILY:"I kappa B kinases", pmod(P))
 p(HGNCGENEFAMILY:"I kappa B kinases", pmod(P)) -> p(HGNCGENEFAMILY:"I kappa B kinases", pmod(U))
 p(HGNCGENEFAMILY:"I kappa B kinases", pmod(U)) -> deg(p(HGNCGENEFAMILY:"I kappa B kinases"))
-deg(p(HGNCGENEFAMILY:"I kappa B kinases")) -> p(HGNCGENEFAMILY:"NF-kappa B complex subunits")
+deg(p(HGNCGENEFAMILY:"I kappa B kinases")) -> a(complex(p(HGNC:"NFKB1"),p(HGNC:"RELA")))
+
+SET Evidence = "Activated NF-κB dimers then translocate to the nucleus"
+act(complex(p(HGNC:"NFKB1"),p(HGNC:"RELA"))) -> tloc(a(complex(p(HGNC:"NFKB1"),p(HGNC:"RELA"))), fromLoc(MESH:"Cytosol"), toLoc(MESH:"Cell Nucleus"))
+
+SET Evidence = "Activation of non-canonical pathway occurs at slower kinetics, is mediated by IKKα and facilitates nuclear translocation primarily of RelB containing dimers"
+act(a(HGNC:CHUK))-> tloc(a(complex(p(HGNC:"NFKB1"),p(HGNC:"RELB"))), fromLoc(MESH:"Cytosol"), toLoc(MESH:"Cell Nucleus"))
+
+#SET Species = "10090"
+#SET Evidence = ""
