@@ -21,7 +21,7 @@ DEFINE NAMESPACE CHEBI          AS URL "https://raw.githubusercontent.com/pharma
 # DEFINE NAMESPACE DOID           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c0c576e3d3ab9b25a3982251a4ee2fd7c49e1679/external/doid-names.belns"
 # DEFINE NAMESPACE ECCODE         AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/ec-code.belns"
 # DEFINE NAMESPACE FB             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/fb-names.belns"
-# DEFINE NAMESPACE HBP            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/export/hbp-names.belns"
+DEFINE NAMESPACE HBP            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/export/hbp-names.belns"
 DEFINE NAMESPACE HGNC           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc-names.belns"
 # DEFINE NAMESPACE HGNCGENEFAMILY AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc.genefamily-names.belns"
 DEFINE NAMESPACE HP             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hp-names.belns"
@@ -62,8 +62,8 @@ DEFINE ANNOTATION Species       AS PATTERN "^\d+$"
 # DEFINE ANNOTATION Confidence    AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/confidence/confidence-1.0.0.belanno"
 # DEFINE ANNOTATION Disease       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/disease/disease-20170511.belanno"
 # DEFINE ANNOTATION Gender        AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/gender/gender-1.0.0.belanno"
-# DEFINE ANNOTATION MeSHAnatomy   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-anatomy/mesh-anatomy-20170511.belanno"
-# DEFINE ANNOTATION MeSHDisease   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-diseases/mesh-diseases-20170511.belanno"
+DEFINE ANNOTATION MeSHAnatomy   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-anatomy/mesh-anatomy-20170511.belanno"
+DEFINE ANNOTATION MeSHDisease   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-diseases/mesh-diseases-20170511.belanno"
 # DEFINE ANNOTATION Subgraph      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/neurommsig/neurommsig-1.0.3.belanno"
 # DEFINE ANNOTATION TextLocation  AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/text-location/text-location-1.0.1.belanno"
 
@@ -129,3 +129,34 @@ SET Species = "10116"
 p(HGNC:"GSK3B") -> path(HP:"Neurodegeneration")
 p(HGNC:"GSK3B") -| path(MESH:"Spatial Learning")
 p(HGNC:"GSK3B") -> path(MESH:"Cognitive Dysfunction")
+
+#skipped and continued with 1st Figure
+
+SET Evidence = "The normal insulin signaling pathway Insulin and IGF-1 are internalized neurons via
+respectively binding to IR and IGF-1 R"
+complex(p(HGNC:"INS"),p(HGNC:"INSR"))
+complex(p(HGNC:"IGF1"),p(HGNC:"IGF1R"))
+
+SET Evidence = "After phosphorylation of IR and IGF-1 R, IRS is phosphorylated to initiate the down-stream substrate, PI3K."
+p(HGNC:"INSR", pmod(Ph)) -> p(HGNC:"IRS1", pmod(Ph))
+p(HGNC:"IGF1R", pmod(Ph)) -> p(HGNC:"IRS2", pmod (Ph))
+p(HGNC:"IRS1", pmod(Ph)) reg p(MESH:"Phosphatidylinositol 3-Kinase")
+p(HGNC:"IRS2", pmod (Ph)) reg p(MESH:"Phosphatidylinositol 3-Kinase")
+
+SET Evidence = "Subsequently, Akt
+is activated in response to PI3K signaling via phosphorylated by PDK."
+p(MESH:"Phosphatidylinositol 3-Kinase") -> act(p(HGNC:"PDK1"))
+act(p(HGNC:"PDK1")) -> p(HGNC:"AKT1", pmod(Ph))
+p(HGNC:"AKT1", pmod(Ph)) -> act(p(HGNC:"AKT1"))
+
+SET Evidence = "The activated Akt phosphorylates GSK31beta at Ser 9, leading to GSK31b inhibited."
+act(p(HGNC:"AKT1")) -> p(HGNC:"GSK3B", pmod (P, S, 9))
+p(HGNC:"GSK3B", pmod (P, S, 9)) -| act(p(HGNC:"GSK3B", pmod (P, S, 9)))
+
+SET Evidence = "The abnormal
+insulin signaling pathway Insulin and IGF-1 can not trigger the down-stream signaling in PD and AD, resulting from the reduced phosphorylation of IR and IGF-1 R and
+from the increased hyper-phosphorylation of IRS-1 and IRS-2."
+path(MESH:"Parkinson Disease") neg p(HGNC:"INSR", pmod (Ph))
+path(MESH:"Parkinson Disease") neg p(HGNC:"IGF1R", pmod (Ph))
+path(MESH:"Alzheimer Disease") neg p(HGNC:"INSR", pmod (Ph))
+path(MESH:"Alzheimer Disease") neg p(HGNC:"IGF1R", pmod (Ph))

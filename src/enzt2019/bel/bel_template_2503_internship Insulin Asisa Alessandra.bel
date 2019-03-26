@@ -16,34 +16,36 @@ SET DOCUMENT Description = ""
 
 # Namespaces hosted on https://github.com/pharmacome/terminology
 # --------------------------------------------------------------
-# DEFINE NAMESPACE CHEBI          AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/chebi-names.belns"
-# DEFINE NAMESPACE DRUGBANK       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/drugbank-names.belns"
-# DEFINE NAMESPACE DOID           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c0c576e3d3ab9b25a3982251a4ee2fd7c49e1679/external/doid-names.belns"
-# DEFINE NAMESPACE ECCODE         AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/ec-code.belns"
-# DEFINE NAMESPACE FB             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/fb-names.belns"
-# DEFINE NAMESPACE HBP            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/export/hbp-names.belns"
+DEFINE NAMESPACE CHEBI          AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/chebi-names.belns"
+DEFINE NAMESPACE DRUGBANK       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/drugbank-names.belns"
+DEFINE NAMESPACE DOID           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/doid-names.belns"
+DEFINE NAMESPACE ECCODE         AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/ec-code.belns"
+DEFINE NAMESPACE FB             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/fb-names.belns"
+DEFINE NAMESPACE HBP            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/export/hbp-names.belns"
 DEFINE NAMESPACE HGNC           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc-names.belns"
-# DEFINE NAMESPACE HGNCGENEFAMILY AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc.genefamily-names.belns"
-# DEFINE NAMESPACE HP             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hp-names.belns"
+DEFINE NAMESPACE HGNCGENEFAMILY AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc.genefamily-names.belns"
+DEFINE NAMESPACE HP             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hp-names.belns"
 DEFINE NAMESPACE GO             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/go-names.belns"
-# DEFINE NAMESPACE INTERPRO       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/interpro-names.belns"
+DEFINE NAMESPACE INTERPRO       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/interpro-names.belns"
 DEFINE NAMESPACE MESH           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mesh-names.belns"
-# DEFINE NAMESPACE MGI            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mgi-names.belns"
-# DEFINE NAMESPACE MIRBASE        AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mirbase-names.belns"
-# DEFINE NAMESPACE NCBIGENE       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/ncbigene.belns"
-# DEFINE NAMESPACE PFAM           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/pfam-names.belns"
-# DEFINE NAMESPACE RGD            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/rgd-names.belns"
+DEFINE NAMESPACE MGI            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mgi-names.belns"
+DEFINE NAMESPACE MIRBASE        AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mirbase-names.belns"
+DEFINE NAMESPACE NCBIGENE       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/entrez.belns"
+DEFINE NAMESPACE PFAM           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/pfam-names.belns"
+DEFINE NAMESPACE RGD            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/rgd-names.belns"
 
 # Namespaces hosted on https://github.com/sorgerlab/famplex
 # ---------------------------------------------------------
-# DEFINE NAMESPACE FPLX           AS URL "https://raw.githubusercontent.com/sorgerlab/famplex/d9ec0526c20795146a9a6aef17496efe1a36cac6/export/famplex.belns"
+DEFINE NAMESPACE FPLX           AS URL "https://raw.githubusercontent.com/sorgerlab/famplex/d9ec0526c20795146a9a6aef17496efe1a36cac6/export/famplex.belns"
 
 # Namespaces defined with regular expressions
 # -------------------------------------------
-# DEFINE NAMESPACE DBSNP          AS PATTERN "rs[0-9]+"
-# DEFINE NAMESPACE TAXONOMY       AS PATTERN "^\d+$"
-# DEFINE NAMESPACE UNIPROT        AS PATTERN "^([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?$"
-# DEFINE NAMESPACE PUBCHEM        AS PATTERN "^\d+$"
+DEFINE NAMESPACE DBSNP          AS PATTERN "rs[0-9]+"
+DEFINE NAMESPACE TAXONOMY       AS PATTERN "^\d+$"
+DEFINE NAMESPACE UNIPROT        AS PATTERN "^([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?$"
+DEFINE NAMESPACE PUBCHEM        AS PATTERN "^\d+$"
+
+DEFINE NAMESPACE FIXME AS LIST {"Neuronal Death"}
 
 ###############
 # Annotations #
@@ -55,17 +57,17 @@ DEFINE ANNOTATION Species       AS PATTERN "^\d+$"
 
 # Annotations hosted on https://arty.scai.fraunhofer.de/artifactory/bel/annotation
 # --------------------------------------------------------------------------------
-# DEFINE ANNOTATION Anatomy       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/anatomy/anatomy-20170511.belanno"
-# DEFINE ANNOTATION CellLine      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell-line/cell-line-20170511.belanno"
-# DEFINE ANNOTATION CellStructure AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell-structure/cell-structure-20170511.belanno"
-# DEFINE ANNOTATION Cell          AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell/cell-20170511.belanno"
-# DEFINE ANNOTATION Confidence    AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/confidence/confidence-1.0.0.belanno"
-# DEFINE ANNOTATION Disease       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/disease/disease-20170511.belanno"
-# DEFINE ANNOTATION Gender        AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/gender/gender-1.0.0.belanno"
+DEFINE ANNOTATION Anatomy       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/anatomy/anatomy-20170511.belanno"
+DEFINE ANNOTATION CellLine      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell-line/cell-line-20170511.belanno"
+DEFINE ANNOTATION CellStructure AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell-structure/cell-structure-20170511.belanno"
+DEFINE ANNOTATION Cell          AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell/cell-20170511.belanno"
+DEFINE ANNOTATION Confidence    AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/confidence/confidence-1.0.0.belanno"
+DEFINE ANNOTATION Disease       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/disease/disease-20170511.belanno"
+DEFINE ANNOTATION Gender        AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/gender/gender-1.0.0.belanno"
 DEFINE ANNOTATION MeSHAnatomy   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-anatomy/mesh-anatomy-20170511.belanno"
 DEFINE ANNOTATION MeSHDisease   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-diseases/mesh-diseases-20170511.belanno"
-# DEFINE ANNOTATION Subgraph      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/neurommsig/neurommsig-1.0.3.belanno"
-# DEFINE ANNOTATION TextLocation  AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/text-location/text-location-1.0.1.belanno"
+DEFINE ANNOTATION Subgraph      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/neurommsig/neurommsig-1.0.3.belanno"
+DEFINE ANNOTATION TextLocation  AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/text-location/text-location-1.0.1.belanno"
 
 ##############
 # Statements #
@@ -90,7 +92,7 @@ cases of PDD"
 SET MeSHDisease = "Parkinson Disease"
 path(MESH:"Dementia") association a(MESH:"Lewy Bodies")
 path(MESH:"Dementia") association a(MESH:"Neurofibrillary Tangles")
-path(MESH:"Dementia") association a(MESH:"Plaque, Amyloid")
+path(MESH:"Dementia") association path(MESH:"Plaque, Amyloid")
 
 SET Evidence = "Alpha-synuclein accumulation is associated with significant
 neuronal dysfunction"
@@ -110,18 +112,50 @@ SET Evidence = "IGF-
 is widely expressed by neurons, to activate IRS-2."
 
 p(HGNC:"IGF1R") pos a(MESH:"Neurons")
-complex(p(HGNC:"IGF1")p(HGNC:"IGF1R")) increases act(p(HGNC:IRS2))
+complex(p(HGNC:"IGF1"), p(HGNC:"IGF1R")) increases act(p(HGNC:IRS2))
 
 SET Evidence = "Insulin and IGF-1 share similar downstream signaling
 pathways leading to several shared outcomes, such as activation
 of the PI3K/Akt pathway after IRS-1 and IRS-2 phosphorylation."
 
-p(HGNC:"IRS1", pmod(P)) pos bp(GO:"Phosphatidylinositol 3-kinase signaling")
-p(HGNC:"IRS2", pmod(P)) pos bp(GO:"Phosphatidylinositol 3-kinase signaling")
+p(HGNC:"IRS1", pmod(P)) pos bp(GO:"phosphatidylinositol 3-kinase signaling")
+p(HGNC:"IRS2", pmod(P)) pos bp(GO:"phosphatidylinositol 3-kinase signaling")
 
 SET Evidence = "PI3K, which is activated by IRS, triggers activation of the
 downstream protein phosphatidylinositol 3, 4, 5-triphosphate
 (PIP3)."
 
-p(HGNC:"IRS") increases act(bp(GO:"phosphatidylinositol 3-kinase complex"))
+p(HGNC:"IRS1") increases act(a(GO:"phosphatidylinositol 3-kinase complex"))
+p(HGNC:"IRS2") increases act(a(GO:"phosphatidylinositol 3-kinase complex"))
 bp(GO:"phosphatidylinositol 3-kinase complex") increases p(PUBCHEM:"53477782")
+
+SET Evidence = "PIP3 then activates phosphoinositide-dependent
+protein kinase (PDK), which subsequently recruits Akt (also
+termed protein kinase B, PKB) to the plasma membrane and
+phosphorylates Akt on residues Thr 308 and Ser 473."
+
+p(PUBCHEM:"53477782") increases act(p(HGNC:"PDPK1"))
+SET MeSHAnatomy = "Cell Membrane"
+p(HGNC:"PDPK1") increases act(p(FPLX:"AKT", pmod(P,T,308), pmod(P,S,437)))
+UNSET MeSHAnatomy = "Cell Membrane"
+
+SET Evidence ="Through increasing
+or decreasing GSK3b phosphorylation at serine 9, Akt also
+performs a crucial negative regulatory function on GSK3b,
+thereby affecting synaptic plasticity and neuronal survival."
+
+p(FPLX:"AKT" pmod(P,T,308), pmod(P,S,437)) decreases act(p(HGNC:"GSK3B", pmod(P,S,9)))
+p(HGNC:"GSK3B", pmod(P,S,9)) decreases act(p(HGNC:"GSK3B"))
+
+SET Evidence ="The inhibition of Akt activates GSK3b through reducing GSK3b phosphorylation at serine 9."
+
+p(FPLX:"AKT", pmod(P,T,308), pmod(P,S,437)) decreases act(p(FPLX:"AKT"))
+p(FPLX:"AKT") increases p(HGNC:"GSK3B", pmod(P,S,9))
+p(FPLX:"AKT") decreases act(p(HGNC:"GSK3B"))
+
+SET Evidence ="Subsequently, activated GSK3b stimulates aberrant tau phosphorylation, and neuronal death."
+
+act(p(HGNC:"GSK3B")) increases act(p(HGNC:"MAPT", pmod(P)))
+act(p(HGNC:"MAPT", pmod(P))) increases a(FIXME:"Neuronal Death")
+
+#Abnormal insulin signalling

@@ -76,49 +76,70 @@ SET Citation = {"PubMed", "25652642"}
 
 SET Evidence = "Advances in molecular pathogenesis suggest that the chronic inflammation is a shared mechanism in the initiation and progression of multiple neurodegenerative diseases with diverse clinical manifestations such as Alzheimer’s disease (AD) and multiple sclerosis (MS)."
 
-bp(GO:"Chronic inflammatory response") pos path(MESH: "Alzhimer's Disease")
-bp(GO:"Chronic inflammatory response") pos path(MESH: "Multiple sclerosis")
+bp(GO:"chronic inflammatory response") pos path(MESH: "Alzhimer's Disease")
+bp(GO:"chronic inflammatory response") pos path(MESH: "Multiple sclerosis")
 
 SET Evidence ="A predominant consequence of increased inflammatory signaling is the upregulation of the transcription factor, nuclear factor-kappa B (NF–κB) with subsequent neuroprotective or deleterious effects depending on the strength of the signal and the type of NF–κB dimers activated."
 
-bp(GO: "inflammatory response") -> p(HGNCGENEFAMILY: "NF-kB")
+bp(GO:"inflammatory response") -> p(HGNCGENEFAMILY: "NF-kappa B complex subunits")
 
 SET Evidence ="Neurodegenerative diseases refer to those conditions in which neurons in the brain and spinal cord undergo progressive degeneration and eventual death. "
 
-SET Anatomy = {"Spinal cord", "Brain"}
+SET Anatomy = {"spinal cord", "Brain"}
 
-path(MESH: "Neurodegenerative disease") pos path(MESH: "neuron death")
+path(MESH: "Neurodegenerative Diseases") pos path(MESH: "neuron death")
 
 UNSET Anatomy
 
 SET Evidence ="Examples of neurodegenerative diseases include Alzheimer’s disease (AD), multiple sclerosis (MS), Parkinson’s disease (PD), amyotrophic lateral sclerosis (ALS) and Huntington disease (HD) [1]. Although the genetic and environmental factors that initiate degeneration differ among these diseases, a shared biochemical cascade of inflammatory events plays a central role in mediating the neuronal cell loss."
 
-bp(GO: "inflammation response") -- path(MESH: "Alzhimer's disease")
-bp(GO: "inflammation response") -- path(MESH: "Multiple sclerosis")
-bp(GO: "inflammation response") -- path(MESH: "Parkinson disease")
-bp(GO: "inflammation response") -- path(MESH: "Huntington disease")
-bp(GO: "inflammation response") -- path(MESH: "neuronal Cell death")
+bp(GO: "inflammatory response") -- path(MESH: "Alzheimer Disease")
+bp(GO: "inflammatory response") -- path(MESH: "Multiple sclerosis")
+bp(GO: "inflammatory response") -- path(MESH: "Parkinson disease")
+bp(GO: "inflammatory response") -- path(MESH: "Huntington disease")
+bp(GO: "inflammatory response") -- path(MESH: "neuronal Cell death")
 
 SET Evidence ="The transcription factor nuclear factor-κB (NF-κB) is a critical regulator of immune and inflammatory responses"
 
-p(HGNCGENEFAMILY: "NF-kB") regulates path(MESH: "inflammatory response")
-p(HGNCGENEFAMILY: "NF-kB") regulates path(MESH: "immune system")
+p(HGNCGENEFAMILY:"NF-kappa B complex subunits") regulates path(MESH: "inflammatory response")
+p(HGNCGENEFAMILY:"NF-kappa B complex subunits") regulates path(MESH: "immune system")
+
+
+SET Evidence = "In mammals, the NF-κB/Rel family comprises five members;
+p50, p52, p65 (Rel-A), c-Rel and Rel-B proteins, that form homo or hetero-dimers and remain in an inactive form in complex with the inhibitory molecules called the IκB proteins in resting cells. "
+
+SET Species = {"9606"}
+
+p(HGNCGENEFAMILY: "NF-kappa B complex subunits") hasMembers list(p(HGNC:NFKB1), p(HGNC:NFKB2), p(HGNC:REL), p(HGNC:RELA), p(HGNC:RELB))
+
+UNSET Species
 
 SET Evidence = "Activation of IKK leads to IKKβ mediated phosphorylation of IκB proteins followed by ubiquitination and degradation by proteasomes releasing the NF–κB dimers from the inhibitory complex"
 
-complex(HGNC:"IKK complex") hasMembers list(p(HGNC:CHUK), p(HGNC:IKBKB), p(HGNC:IKBKG))
-act(complex(HGNC:"IKK complex")) -> p(HGNC:IKBKB)
+complex(HGNCGENEFAMILY:"IKK complex") hasMembers list(p(HGNC:CHUK), p(HGNC:IKBKB), p(HGNC:IKBKG))
+act(complex(HGNCGENEFAMILY:"IKK complex")) -> p(HGNC:IKBKB)
 p(HGNC:IKBKB) -> p(HGNC:CHUK,pmod(Ph))
 p(HGNC:CHUK) -> p(HGNC:CHUK, pmod(UbK48))
 
+SET Evidence = "Glutamate induced stimulation of cerebellar granule cells via the N-methyl-D-aspartate (NMDA) receptor activate p65:p50 dimers and enhance transactivation of pro-apoptotic factors [16]."
+
+SET Anatomy = {"Cerebral"}
+SET Cell = {"granular"}
+
+complex(GO:"NF-kappaB p50/p65 complex") hasMembers list(p(HGNC:"NFKB1"), p(HGNC:"RELA"))
+a(CHEBI: "(5-L-Glutamyl)-L-glutamate") pos act(p(GO:"NMDA glutamate receptor activity"))
+p(GO:"NMDA selective glutamate receptor complex") pos complex(GO:"NF-kappaB p50/p65 complex")
+
+UNSET Cell
+UNSET Anatomy
+
+SET Evidence = "In contrast, IL-1β stimulation of neurons mediates neuroprotection by activating c-rel containing dimers and transactivation of anti-apoptotic factors"
+
+p(MESH:"IL1B protein, human") pos act(p(HGNC:"REL"))
+
 SET Evidence = "Pathologically AD affected brain exhibits deposits of amyloid-beta (Aβ) as neuritic plaques (NPs) and hyperphosphorylated aggregated tau protein as neurofibrillary tangles (NFTs)."
 
-path(MESH:"Alzheimer Disease") isA
-SET Evidence =>
-SET Evidence =
-SET Evidence =
-SET Evidence =
-SET Evidence =
-SET Evidence =
-SET Evidence =
-SET Evidence =
+path(MESH: "Alzheimer Disease") -- act(p(HGNC:"APP"))
+p(HGNC:"APP") isA p(MESH:"Plaque, Amyloid")
+path(MESH: "Alzhimer Disease") -> a(p(HGNC:"MAPT"), pmod(P))
+a(p(HGNC:"MAPT"), pmod(P)) isA p(MESH:"Neurofibrillary Tangles")

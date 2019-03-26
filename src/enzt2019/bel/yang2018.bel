@@ -43,7 +43,7 @@ DEFINE NAMESPACE FPLX           AS URL "https://raw.githubusercontent.com/sorger
 # DEFINE NAMESPACE DBSNP          AS PATTERN "rs[0-9]+"
 # DEFINE NAMESPACE TAXONOMY       AS PATTERN "^\d+$"
 # DEFINE NAMESPACE UNIPROT        AS PATTERN "^([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?$"
-# DEFINE NAMESPACE PUBCHEM        AS PATTERN "^\d+$"
+DEFINE NAMESPACE PUBCHEM        AS PATTERN "^\d+$"
 
 ###############
 # Annotations #
@@ -86,7 +86,7 @@ a(MESH:"Lewy Bodies") -> path(MESH:"Parkinson Disease")
 SET Evidence = "In addition to the classic motor dysfunction symptoms of PD, non-movement
 disorders involving cognitive deﬁcits and dementia are increasingly acknowledged as core
 symptoms of PD."
-path(MESH:"Parkinson Disease") -| a(GO:"motor activity")
+path(MESH:"Parkinson Disease") -| bp(GO:"motor behavior")
 path(MESH:"Parkinson Disease") -| bp(GO:cognition)
 path(MESH:"Parkinson Disease") -> path(MESH:Dementia)
 
@@ -297,14 +297,14 @@ in both AD and PD patients (Morris et al., 2008; Talbot
 et al., 2012)."
 p(HGNC:INSR, pmod(Ph)) neg path(MESH:"Alzheimer Disease")
 p(HGNC:INSR, pmod(Ph)) neg path(MESH:"Parkinson Disease")
-p(FPLX:IRS, pmod(HBP:hyperphoshorylation)) -| act(p(FPLX:IRS))
-p(FPLX:IRS, pmod(HBP:hyperphoshorylation)) pos path(MESH:"Alzheimer Disease")
-p(FPLX:IRS, pmod(HBP:hyperphoshorylation)) pos path(MESH:"Parkinson Disease")
+p(FPLX:IRS, pmod(HBP:hyperphosphorylation)) -| act(p(FPLX:IRS))
+p(FPLX:IRS, pmod(HBP:hyperphosphorylation)) pos path(MESH:"Alzheimer Disease")
+p(FPLX:IRS, pmod(HBP:hyperphosphorylation)) pos path(MESH:"Parkinson Disease")
 
 SET Evidence = " This results in the failure of insulin and IGF-1
 to activate downstream molecules such as PI3K."
 p(HGNC:INSR, pmod(Ph)) -| act(p(FPLX:PI3K))
-p(FPLX:IRS, pmod(HBP:hyperphoshorylation)) -| act(p(FPLX:PI3K))
+p(FPLX:IRS, pmod(HBP:hyperphosphorylation)) -| act(p(FPLX:PI3K))
 p(HGNC:INS) -> act(p(FPLX:PI3K))
 p(HGNC:IGF1) -> act(p(FPLX:PI3K))
 
@@ -342,7 +342,7 @@ act(p(FPLX:AKT)) -> act(p(HGNC:GSK3B))
 SET Evidence = "PI3K, which is activated by IRS, triggers activation of the
 downstream protein phosphatidylinositol 3, 4, 5-triphosphate
 (PIP3)."
-p(HGNC:IRS) -> act(p(FPLX:PI3K))
+p(FPLX:IRS) -> act(p(FPLX:PI3K))
 act(p(FPLX:PI3K)) -> act(a(PUBCHEM:53477782))
 
 SET Evidence = "PIP3 then activates phosphoinositide-dependent
@@ -369,7 +369,7 @@ its inhibition results in improvements in cognitive impairment
 in these rodents."
 SET MeSHAnatomy = {"Cerebral Cortex", "Hippocampus"}
 p(HGNC:GSK3B) -> path(HP:Neurodegeneration)
-p(HGNC:GSK3B) -| bp(MESH:"Spatial Learning")
+p(HGNC:GSK3B) -| path(MESH:"Spatial Learning")
 p(HGNC:GSK3B) -| bp(GO:cognition)
 UNSET MeSHAnatomy
 
@@ -389,6 +389,6 @@ bp(GO:"phosphatidylinositol 3-kinase signaling") -> p(HGNC:GSK3B, pmod(Ph,Ser,9)
 SET Evidence = " Meanwhile, Deng et al. (2005) have found that
 the use of a PI3K inhibitor increased tau hyperphosphorylation
 via GSK activation."
-act(p(FPLX:PI3K)) -| p(HGNC:MAPT, pmod(HBP:hyperphoshorylation))
-act(p(FPLX:PI3K)) -| act(p(FPLX:GSK3B))
-act(p(FPLX:GSK3B)) -> p(HGNC:MAPT, pmod(HBP:hyperphoshorylation))
+act(p(FPLX:PI3K)) -| p(HGNC:MAPT, pmod(HBP:hyperphosphorylation))
+act(p(FPLX:PI3K)) -| act(p(HGNC:GSK3B))
+act(p(HGNC:GSK3B)) -> p(HGNC:MAPT, pmod(HBP:hyperphosphorylation))
