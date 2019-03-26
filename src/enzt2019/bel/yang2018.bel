@@ -3,7 +3,7 @@
 #######################
 SET DOCUMENT Copyright   = "Copyright © 2019 Fraunhofer Institute SCAI, All rights reserved."
 SET DOCUMENT Licenses    = "CC BY 4.0"
-SET DOCUMENT ContactInfo = ""
+SET DOCUMENT ContactInfo = "esther.wollert@scai.fraunhofer.de"
 
 SET DOCUMENT Name        = "The Role of Insulin/IGF-1/PI3K/Akt/GSK3β Signaling in Parkinson’s Disease Dementia"
 SET DOCUMENT Version     = "1.0.0"
@@ -276,7 +276,7 @@ associated with cognitive function in patients with PD (Ma et al.,
 2015)."
 SET MeSHAnatomy = "Serum"
 SET MeSHDisease = "Parkinson Disease"
-p(HGNC:IGF1) -- bp(MESH:cognition)
+p(HGNC:IGF1) -- bp(GO:cognition)
 UNSET MeSHAnatomy
 UNSET MeSHDisease
 
