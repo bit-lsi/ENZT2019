@@ -3,11 +3,11 @@
 #######################
 SET DOCUMENT Copyright   = "Copyright © 2019 Fraunhofer Institute SCAI, All rights reserved."
 SET DOCUMENT Licenses    = "CC BY 4.0"
-SET DOCUMENT ContactInfo = ""
+SET DOCUMENT ContactInfo = "pathmamuthukotti@gmail.com"
 
-SET DOCUMENT Name        = ""
+SET DOCUMENT Name        = "Significance of NF-κB as a pivotal therapeutic target in the neurodegenerative pathologies of Alzheimer’s disease and multiple sclerosis"
 SET DOCUMENT Version     = "1.0.0"
-SET DOCUMENT Authors     = ""
+SET DOCUMENT Authors     = "Pathma Muthukottiappan"
 SET DOCUMENT Description = ""
 
 ##############
@@ -17,22 +17,22 @@ SET DOCUMENT Description = ""
 # Namespaces hosted on https://github.com/pharmacome/terminology
 # --------------------------------------------------------------
 DEFINE NAMESPACE CHEBI          AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/chebi-names.belns"
-DEFINE NAMESPACE DRUGBANK       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/drugbank-names.belns"
-DEFINE NAMESPACE DOID           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c0c576e3d3ab9b25a3982251a4ee2fd7c49e1679/external/doid-names.belns"
-DEFINE NAMESPACE ECCODE         AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/ec-code.belns"
-DEFINE NAMESPACE FB             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/fb-names.belns"
-DEFINE NAMESPACE HBP            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/export/hbp-names.belns"
+#DEFINE NAMESPACE DRUGBANK       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/drugbank-names.belns"
+#DEFINE NAMESPACE DOID           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c0c576e3d3ab9b25a3982251a4ee2fd7c49e1679/external/doid-names.belns"
+#DEFINE NAMESPACE ECCODE         AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/ec-code.belns"
+#DEFINE NAMESPACE FB             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/fb-names.belns"
+#DEFINE NAMESPACE HBP            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/export/hbp-names.belns"
 DEFINE NAMESPACE HGNC           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc-names.belns"
 DEFINE NAMESPACE HGNCGENEFAMILY AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc.genefamily-names.belns"
-DEFINE NAMESPACE HP             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hp-names.belns"
+#DEFINE NAMESPACE HP             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hp-names.belns"
 DEFINE NAMESPACE GO             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/go-names.belns"
-DEFINE NAMESPACE INTERPRO       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/interpro-names.belns"
+#DEFINE NAMESPACE INTERPRO       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/interpro-names.belns"
 DEFINE NAMESPACE MESH           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mesh-names.belns"
-DEFINE NAMESPACE MGI            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mgi-names.belns"
-DEFINE NAMESPACE MIRBASE        AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mirbase-names.belns"
-DEFINE NAMESPACE NCBIGENE       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/entrez.belns"
-DEFINE NAMESPACE PFAM           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/pfam-names.belns"
-DEFINE NAMESPACE RGD            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/rgd-names.belns"
+#DEFINE NAMESPACE MGI            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mgi-names.belns"
+#DEFINE NAMESPACE MIRBASE        AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mirbase-names.belns"
+#DEFINE NAMESPACE NCBIGENE       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/entrez.belns"
+#DEFINE NAMESPACE PFAM           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/pfam-names.belns"
+#DEFINE NAMESPACE RGD            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/rgd-names.belns"
 
 # Namespaces hosted on https://github.com/sorgerlab/famplex
 # ---------------------------------------------------------
@@ -40,12 +40,12 @@ DEFINE NAMESPACE FPLX           AS URL "https://raw.githubusercontent.com/sorger
 
 # Namespaces defined with regular expressions
 # -------------------------------------------
-DEFINE NAMESPACE DBSNP          AS PATTERN "rs[0-9]+"
-DEFINE NAMESPACE TAXONOMY       AS PATTERN "^\d+$"
+#DEFINE NAMESPACE DBSNP          AS PATTERN "rs[0-9]+"
+#DEFINE NAMESPACE TAXONOMY       AS PATTERN "^\d+$"
 DEFINE NAMESPACE UNIPROT        AS PATTERN "^([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?$"
-DEFINE NAMESPACE PUBCHEM        AS PATTERN "^\d+$"
+#DEFINE NAMESPACE PUBCHEM        AS PATTERN "^\d+$"
 
-DEFINE NAMESPACE FIXME AS LIST {"unknown term"}
+#DEFINE NAMESPACE FIXME AS LIST {"unknown term"}
 
 ###############
 # Annotations #
@@ -105,5 +105,14 @@ and peroxisome proliferator-activated receptor-γ (PPAR-γ), phosphorylates IKK 
  cytokines and neurotoxic molecules such as glutamate and reactive oxygen species (ROS)/induced nitric oxide synthase (iNOS)"
 SET Cell= "microglial cell"
 a(CHEBI: "amyloid-beta polypeptide 42") -> a(CHEBI: "advanced glycation end-product")
-a(CHEBI: "amyloid-beta polypeptide 42") -> p(HGNC:"PPARG")
-a(CHEBI: "amyloid-beta polypeptide 42") -> p(HGNCGENEFAMILY:IKK,pmod(P))
+a(CHEBI: "amyloid-beta polypeptide 42") -> g(HGNC:"PPARG")
+a(CHEBI: "amyloid-beta polypeptide 42") -> p(HGNCGENEFAMILY:IKK, pmod(P))
+a(CHEBI: "amyloid-beta polypeptide 42") -> a(MESH: "Cytokines")
+a(CHEBI: "amyloid-beta polypeptide 42") -> a(CHEBI: "L-glutamate")
+a(CHEBI: "amyloid-beta polypeptide 42") -> a(CHEBI: "reactive oxygen species")
+a(CHEBI: "amyloid-beta polypeptide 42") -> p(UNIPROT: "NOS2")
+UNSET Cell
+
+SET Evidence = "The localized increase in free radical generation promotes increased APP processing, Aβ deposition and tau phosphorylation.
+Animal models that over express the mutant human APP protein have shown a direct relationship between the amount of Aβ aggregates and elevated
+levels of inflammatory cytokines TNF-α, IL-6,IL-12,IL-1β, and IL-1α"
