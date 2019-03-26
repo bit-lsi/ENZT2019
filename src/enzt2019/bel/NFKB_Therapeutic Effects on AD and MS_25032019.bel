@@ -1,7 +1,7 @@
 #######################
 # Document Properties #
 #######################
-SET DOCUMENT Copyright   = 
+SET DOCUMENT Copyright   = "Copyright © 2019 Fraunhofer Institute SCAI, All rights reserved."
 SET DOCUMENT Licenses    = "CC BY 4.0"
 SET DOCUMENT ContactInfo = ""
 
