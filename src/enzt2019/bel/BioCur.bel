@@ -143,3 +143,8 @@ path(MESH: "Alzheimer Disease") -- act(p(HGNC:"APP"))
 p(HGNC:"APP") isA p(MESH:"Plaque, Amyloid")
 path(MESH: "Alzhimer Disease") -> a(p(HGNC:"MAPT"), pmod(P))
 a(p(HGNC:"MAPT"), pmod(P)) isA p(MESH:"Neurofibrillary Tangles")
+
+SET Evidence = "Aβ has been shown to upregulate APOE in astroglial cells."
+
+SET Anatomy = {"astrocyte"}
+a(p(HGNC:"APP")) pos a(p(HGNC:"APOE"))
