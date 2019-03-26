@@ -62,8 +62,8 @@ DEFINE ANNOTATION Species       AS PATTERN "^\d+$"
 # DEFINE ANNOTATION Confidence    AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/confidence/confidence-1.0.0.belanno"
 # DEFINE ANNOTATION Disease       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/disease/disease-20170511.belanno"
 # DEFINE ANNOTATION Gender        AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/gender/gender-1.0.0.belanno"
-# DEFINE ANNOTATION MeSHAnatomy   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-anatomy/mesh-anatomy-20170511.belanno"
-# DEFINE ANNOTATION MeSHDisease   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-diseases/mesh-diseases-20170511.belanno"
+DEFINE ANNOTATION MeSHAnatomy   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-anatomy/mesh-anatomy-20170511.belanno"
+DEFINE ANNOTATION MeSHDisease   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-diseases/mesh-diseases-20170511.belanno"
 # DEFINE ANNOTATION Subgraph      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/neurommsig/neurommsig-1.0.3.belanno"
 # DEFINE ANNOTATION TextLocation  AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/text-location/text-location-1.0.1.belanno"
 
@@ -139,7 +139,7 @@ complex(p(HGNC:"IGF1"),p(HGNC:"IGF1R"))
 
 SET Evidence = "After phosphorylation of IR and IGF-1 R, IRS is phosphorylated to initiate the down-stream substrate, PI3K."
 p(HGNC:"INSR", pmod(Ph)) -> p(HGNC:"IRS1", pmod(Ph))
-p(HGNC:"IGF1R"), pmod(Ph)) -> p(HGNC:"IRS2", pmod (Ph))
+p(HGNC:"IGF1R", pmod(Ph)) -> p(HGNC:"IRS2", pmod (Ph))
 p(HGNC:"IRS1", pmod(Ph)) reg p(MESH:"Phosphatidylinositol 3-Kinase")
 p(HGNC:"IRS2", pmod (Ph)) reg p(MESH:"Phosphatidylinositol 3-Kinase")
 
@@ -157,8 +157,6 @@ SET Evidence = "The abnormal
 insulin signaling pathway Insulin and IGF-1 can not trigger the down-stream signaling in PD and AD, resulting from the reduced phosphorylation of IR and IGF-1 R and
 from the increased hyper-phosphorylation of IRS-1 and IRS-2."
 path(MESH:"Parkinson Disease") neg p(HGNC:"INSR", pmod (Ph))
-path(MESH:"Parkinson Disease") neg p(HGNC:,"IGF1R", pmod (Ph))
+path(MESH:"Parkinson Disease") neg p(HGNC:"IGF1R", pmod (Ph))
 path(MESH:"Alzheimer Disease") neg p(HGNC:"INSR", pmod (Ph))
-path(MESH:"Alzheimer Disease") neg p(HGNC:,"IGF1R", pmod (Ph))
-
-bp(HBP:"hyperphosphorylation")
+path(MESH:"Alzheimer Disease") neg p(HGNC:"IGF1R", pmod (Ph))
