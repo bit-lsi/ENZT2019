@@ -159,3 +159,12 @@ act(p(HGNC:"GSK3B")) increases act(p(HGNC:"MAPT", pmod(P)))
 act(p(HGNC:"MAPT", pmod(P))) increases a(FIXME:"Neuronal Death")
 
 #Abnormal insulin signalling
+
+SET Evidence ="The
+PI3K/Akt signaling, which is activated by insulin or IGF-1,
+negatively regulates GSK3b through increasing or decreasing
+phosphorylation at Ser 9."
+
+p(HGNC:"IGF1") increases bp(GO:"phosphatidylinositol 3-kinase signaling")
+a(MESH:"Insulin") increases  bp(GO:"phosphatidylinositol 3-kinase signaling")
+bp(GO:"phosphatidylinositol 3-kinase signaling") reg p(HGNC:"GSK3B", pmod(P,S,9))
