@@ -247,3 +247,148 @@ p(HGNC:IGF1) -| bp(GO:"neuron apoptotic process")
 SET MeSHAnatomy = "Hippocampus"
 p(HGNC:IGF1) -> bp(GO:"neurogenesis")
 UNSET MeSHAnatomy
+
+SET Evidence = " IGF-
+1 is internalized by binding to IGF-1 receptor (IGF-1R), which
+is widely expressed by neurons, to activate IRS-2."
+complex(p(HGNC:IGF1),p(HGNC:IGF1R)) -> act(p(HGNC:IRS2))
+
+SET Evidence = "It has been
+demonstrated that IGF-1 exerts a positive eﬀect on dopaminergic
+neurons in both in vitro and in vivo models of PD (Oﬀen et al.,
+2001; Kao, 2009). "
+SET MeSHDisease = "Parkinson Disease"
+p(HGNC:IGF1) -> act(a(MESH:"Dopaminergic Neurons"))
+
+SET Evidence = "Westwood et al. (2014) found that lower serum
+IGF-1 levels were associated with increased risk of AD dementia
+as well as increased risk of all forms of dementia, including PDD,
+after adjustment for several other known risk factors."
+SET MeSHAnatomy = "Serum"
+SET MeSHDisease = {"Alzheimer Disease", "Parkinson Disease"}
+p(HGNC:IGF1) -| path(MESH:Dementia)
+UNSET MeSHAnatomy
+UNSET MeSHDisease
+
+SET Evidence = " In addition,
+another report suggested that lower serum IGF-1 levels were
+associated with cognitive function in patients with PD (Ma et al.,
+2015)."
+SET MeSHAnatomy = "Serum"
+SET MeSHDisease = "Parkinson Disease"
+p(HGNC:IGF1) -- bp(MESH:cognition)
+UNSET MeSHAnatomy
+UNSET MeSHDisease
+
+SET Evidence = "Insulin and IGF-1 share similar downstream signaling
+pathways leading to several shared outcomes, such as activation
+of the PI3K/Akt pathway after IRS-1 and IRS-2 phosphorylation."
+p(HGNC:INS) -> bp(GO:"phosphatidylinositol 3-kinase signaling")
+p(HGNC:IGF1) -> bp(GO:"phosphatidylinositol 3-kinase signaling")
+p(HGNC:INS) -> p(HGNC:IRS1, pmod(Ph))
+p(HGNC:IRS1, pmod(Ph)) -> bp(GO:"phosphatidylinositol 3-kinase signaling")
+p(HGNC:IGF1) -> p(HGNC:IRS2, pmod(Ph))
+p(HGNC:IRS2, pmod(Ph)) -> bp(GO:"phosphatidylinositol 3-kinase signaling")
+
+SET Evidence = "Recent histological and biochemical analyses have revealed that
+the reduced phosphorylation of IR and the increased hyper-
+phosphorylation of IRS, the inactivated proteins, were observed
+in both AD and PD patients (Morris et al., 2008; Talbot
+et al., 2012)."
+p(HGNC:INSR, pmod(Ph)) neg path(MESH:"Alzheimer Disease")
+p(HGNC:INSR, pmod(Ph)) neg path(MESH:"Parkinson Disease")
+p(FPLX:IRS, pmod(HBP:hyperphoshorylation)) -| act(p(FPLX:IRS))
+p(FPLX:IRS, pmod(HBP:hyperphoshorylation)) pos path(MESH:"Alzheimer Disease")
+p(FPLX:IRS, pmod(HBP:hyperphoshorylation)) pos path(MESH:"Parkinson Disease")
+
+SET Evidence = " This results in the failure of insulin and IGF-1
+to activate downstream molecules such as PI3K."
+p(HGNC:INSR, pmod(Ph)) -| act(p(FPLX:PI3K))
+p(FPLX:IRS, pmod(HBP:hyperphoshorylation)) -| act(p(FPLX:PI3K))
+p(HGNC:INS) -> act(p(FPLX:PI3K))
+p(HGNC:IGF1) -> act(p(FPLX:PI3K))
+
+SET Evidence = "In contrast,
+when the IRS is properly phosphorylated, insulin and IGF-1
+result in a decrease in the neurotoxicity and accumulation of
+α-synuclein by triggering downstream PI3K/Akt signaling (Kao,
+2009)."
+p(FPLX:IRS, pmod(Ph)) -> bp(GO:"phosphatidylinositol 3-kinase signaling")
+bp(GO:"phosphatidylinositol 3-kinase signaling") -> a(HBP:"alpha-synuclein aggregates")
+
+SET Evidence = "Wang et al. (2010) reported that IGF-1 protected cells of
+the S-type human neuroblastoma line (SH-EP1) from MPP + -
+induced apoptosis through the cytoprotective PI3K/Akt signaling
+pathway, which required GSK3β inactivation"
+p(HGNC:IGF1) -| bp(GO:"apoptotic process")
+p(HGNC:IGF1) -> bp(GO:"phosphatidylinositol 3-kinase signaling")
+act(p(HGNC:GSK3B)) -> bp(GO:"phosphatidylinositol 3-kinase signaling")
+
+SET Evidence = " Generally, the
+activation of components of the insulin/IGF-1 signaling pathway
+occurs in the following sequence: insulin or IGF-1 → IR or
+IGF-1R → IRS-1/2 → PI3K → Akt → GSK3β (see Figure 1)."
+p(HGNC:INS) -> act(p(HGNC:INSR))
+p(HGNC:IGF1) -> act(p(HGNC:IGF1R))
+act(p(HGNC:INSR)) -> act(p(HGNC:IRS1))
+act(p(HGNC:INSR)) -> act(p(HGNC:IRS2))
+act(p(HGNC:IGF1R)) -> act(p(HGNC:IRS1))
+act(p(HGNC:IGF1R)) -> act(p(HGNC:IRS2))
+act(p(HGNC:IRS1)) -> act(p(FPLX:PI3K))
+act(p(HGNC:IRS2)) -> act(p(FPLX:PI3K))
+act(p(FPLX:PI3K)) -> act(p(FPLX:AKT))
+act(p(FPLX:AKT)) -> act(p(HGNC:GSK3B))
+
+SET Evidence = "PI3K, which is activated by IRS, triggers activation of the
+downstream protein phosphatidylinositol 3, 4, 5-triphosphate
+(PIP3)."
+p(HGNC:IRS) -> act(p(FPLX:PI3K))
+act(p(FPLX:PI3K)) -> act(a(PUBCHEM:53477782))
+
+SET Evidence = "PIP3 then activates phosphoinositide-dependent
+protein kinase (PDK), which subsequently recruits Akt (also
+termed protein kinase B, PKB) to the plasma membrane and
+phosphorylates Akt on residues Thr 308 and Ser 473. "
+act(a(PUBCHEM:53477782)) -> act(p(FPLX:PDK))
+act(p(FPLX:PDK)) -> tloc(p(HGNC:AKT1), MESH:Cytosol, MESH:"Cell Membrane")
+SET MeSHAnatomy = "Cell Membrane"
+act(p(FPLX:PDK)) -> p(HGNC:AKT1, pmod(Ph,Thr,308), pmod(Ph,Ser,473))
+UNSET MeSHAnatomy
+
+SET Evidence = " For
+example, inhibition of Akt activates GSK3β through reducing
+GSK3β phosphorylation at serine 9, whereas activation of
+Akt inhibits GSK3β through enhancing phosphorylation."
+act(p(FPLX:AKT)) -> p(HGNC:GSK3B, pmod(Ph,Ser,9))
+p(HGNC:GSK3B, pmod(Ph,Ser,9)) -| act(p(HGNC:GSK3B))
+
+SET Evidence = " The overexpression of GSK3β in cortex and
+hippocampus results in signs of neurodegeneration and spatial
+learning deﬁcits in in vivo models (Lucas et al., 2001), whereas
+its inhibition results in improvements in cognitive impairment
+in these rodents."
+SET MeSHAnatomy = {"Cerebral Cortex", "Hippocampus"}
+p(HGNC:GSK3B) -> path(HP:Neurodegeneration)
+p(HGNC:GSK3B) -| bp(MESH:"Spatial Learning")
+p(HGNC:GSK3B) -| bp(GO:cognition)
+UNSET MeSHAnatomy
+
+SET Evidence = "Ser 9 is the site of GSK3β inhibition, while Tyr 216 is
+the site of GSK3β activation."
+p(HGNC:GSK3B, pmod(Ph,Ser,9)) -| act(p(HGNC:GSK3B))
+p(HGNC:GSK3B, pmod(Ph,Tyr,216)) -> act(p(HGNC:GSK3B))
+
+SET Evidence = "It has been proven that insulin
+eﬀectively increases the phosphorylation GSK3β at Ser 9, thereby
+inactivating GSK3β, via up-regulating PI3K/Akt signaling (Wang
+et al., 2013)."
+p(HGNC:INS) -> p(HGNC:GSK3B, pmod(Ph,Ser,9))
+p(HGNC:INS) -> bp(GO:"phosphatidylinositol 3-kinase signaling")
+bp(GO:"phosphatidylinositol 3-kinase signaling") -> p(HGNC:GSK3B, pmod(Ph,Ser,9))
+
+SET Evidence = " Meanwhile, Deng et al. (2005) have found that
+the use of a PI3K inhibitor increased tau hyperphosphorylation
+via GSK activation."
+act(p(FPLX:PI3K)) -| p(HGNC:MAPT, pmod(HBP:hyperphoshorylation))
+act(p(FPLX:PI3K)) -| act(p(FPLX:GSK3B))
+act(p(FPLX:GSK3B)) -> p(HGNC:MAPT, pmod(HBP:hyperphoshorylation))
