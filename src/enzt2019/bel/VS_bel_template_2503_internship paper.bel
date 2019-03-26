@@ -55,12 +55,12 @@ DEFINE ANNOTATION Species       AS PATTERN "^\d+$"
 
 # Annotations hosted on https://arty.scai.fraunhofer.de/artifactory/bel/annotation
 # --------------------------------------------------------------------------------
-# DEFINE ANNOTATION Anatomy       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/anatomy/anatomy-20170511.belanno"
+DEFINE ANNOTATION Anatomy       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/anatomy/anatomy-20170511.belanno"
 # DEFINE ANNOTATION CellLine      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell-line/cell-line-20170511.belanno"
 # DEFINE ANNOTATION CellStructure AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell-structure/cell-structure-20170511.belanno"
 DEFINE ANNOTATION Cell          AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell/cell-20170511.belanno"
 # DEFINE ANNOTATION Confidence    AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/confidence/confidence-1.0.0.belanno"
-# DEFINE ANNOTATION Disease       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/disease/disease-20170511.belanno"
+DEFINE ANNOTATION Disease       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/disease/disease-20170511.belanno"
 # DEFINE ANNOTATION Gender        AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/gender/gender-1.0.0.belanno"
 # DEFINE ANNOTATION MeSHAnatomy   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-anatomy/mesh-anatomy-20170511.belanno"
 # DEFINE ANNOTATION MeSHDisease   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-diseases/mesh-diseases-20170511.belanno"
@@ -97,3 +97,21 @@ SET Cell = {"microglial cell"}
 a(CHEBI:demethoxycurcumin) decreases p(HGNC:NFKBIA, pmod(P))
 a(CHEBI:demethoxycurcumin) decreases p(HGNCGENEFAMILY:"NF-kappa B complex subunits")
 a(CHEBI:demethoxycurcumin) decreases bp(GO: "inflammatory response")
+UNSET Cell
+
+SET Evidence = "Structural polymorphism with an amino acid change from cysteine to arginine in position 738 in exon-4 of IκBL, is associated with predisposition to MS."
+p(HGNC:NFKBIL1, var(p.Cys738Arg)) association path("Multiple Sclerosis")
+
+SET Evidence = "Suppression of NF-κB by CNS restricted ablation of NEMO or IKKβ has been shown to ameliorate EAE"
+SET Anatomy = central nervous system
+act(complex(GO:"NF-kappaB complex")) decreases (p(HGNC:IKBKG), p(HGNCGENEFAMILY:"NF-kappa B complex subunits"))
+UNSET
+
+SET Evidence = "For example, BTRC, β-transducin repeat containing protein, a RING E3 protein that mediates ubiquitination of IκBα is one of the genes upregulated in T cells in MS relapse"
+SET Cell = T cell
+p(HGNC:BTRC) association p(HGNC:NFKBIA, pmod(U))
+path("Multiple Sclerosis") increases g(HGNC:BTRC)
+UNSET
+
+SET Evidence = "More recently modulation of the immuno-inflammatory transcriptome by the NF-κB regulated miRNAs has been implicated in the pathogenesis of RRMS."
+#p(HGNCGENEFAMILY:"NF-kappa B complex subunits") regulates m
