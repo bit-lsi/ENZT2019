@@ -99,3 +99,11 @@ SET MeSHAnatomy= "Neurons"
 a(CHEBI: "amyloid-beta polypeptide 42") reg p(HGNC:APP)
 a(CHEBI: "amyloid-beta polypeptide 42") reg p(HGNCGENEFAMILY:BACE1)
 UNSET MeSHAnatomy
+
+SET Evidence ="Excessive accumulation of Aβ1-42 stimulates microglial cells by signaling via receptor associated advanced glycation end products (RAGE)
+and peroxisome proliferator-activated receptor-γ (PPAR-γ), phosphorylates IKK proteins, and enhances NF-κB mediated transactivation of inflammatory
+ cytokines and neurotoxic molecules such as glutamate and reactive oxygen species (ROS)/induced nitric oxide synthase (iNOS)"
+SET Cell= "microglial cell"
+a(CHEBI: "amyloid-beta polypeptide 42") -> a(CHEBI: "advanced glycation end-product")
+a(CHEBI: "amyloid-beta polypeptide 42") -> p(HGNC:"PPARG")
+a(CHEBI: "amyloid-beta polypeptide 42") -> p(HGNCGENEFAMILY:IKK,pmod(P))
