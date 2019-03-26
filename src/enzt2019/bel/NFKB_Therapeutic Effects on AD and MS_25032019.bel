@@ -71,8 +71,7 @@ DEFINE ANNOTATION TextLocation  AS URL "https://arty.scai.fraunhofer.de/artifact
 # Statements #
 ##############
 SET Citation = {"PubMed", "25652642"}
-SET Disease = "Alzheimer Disease"
-SET Disease = "Multiple sclerosis"
+SET Disease = {"Alzheimer's Disease","multiple sclerosis"}
 SET NervousSystem = {"Neurons", "Neuronal Cells"}
 
 SET Evidence = "the NF-κB/Rel family comprises five members; p50, p52, p65 (Rel-A), c-Rel and Rel-B proteins, that form homo or hetero-dimers and remain in an inactive form in complex with the inhibitory molecules called the IκB proteins"
