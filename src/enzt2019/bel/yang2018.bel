@@ -86,7 +86,7 @@ a(MESH:"Lewy Bodies") -> path(MESH:"Parkinson Disease")
 SET Evidence = "In addition to the classic motor dysfunction symptoms of PD, non-movement
 disorders involving cognitive deﬁcits and dementia are increasingly acknowledged as core
 symptoms of PD."
-path(MESH:"Parkinson Disease") -| bp(GO:"motor activity")
+path(MESH:"Parkinson Disease") -| a(GO:"motor activity")
 path(MESH:"Parkinson Disease") -| bp(GO:cognition)
 path(MESH:"Parkinson Disease") -> path(MESH:Dementia)
 
@@ -105,7 +105,7 @@ cases of PDD (Wang et al., 2010)."
 SET MeSHDisease = "Parkinson Disease"
 path(MESH:Dementia) -- a(MESH:"Lewy Bodies")
 path(MESH:Dementia) -- a(MESH:"Neurofibrillary Tangles")
-path(MESH:Dementia) -- a(MESH:"Plaque, Amyloid")
+path(MESH:Dementia) -- path(MESH:"Plaque, Amyloid")
 UNSET MeSHDisease
 
 SET Evidence = "Interestingly, one of the most
@@ -124,7 +124,7 @@ SET Evidence = "PDD clinically manifests as executive dysfunction, faulty
 recognition memory, visual hallucinations and cognitive
 ﬂuctuations."
 SET MeSHDisease = "Parkinson Disease"
-path(MESH:Dementia) -| bp(MESH:"Executive Function")
+path(MESH:Dementia) -| path(MESH:"Executive Function")
 path(MESH:Dementia) -| bp(GO:memory)
 #path(MESH:Dementia) -- bp(GO:"visual perception")
 path(MESH:Dementia) -- bp(GO:cognition)
@@ -212,7 +212,7 @@ complex(p(HGNC:INS),p(HGNC:INSR)) -> act(p(HGNC:IRS1))
 SET Evidence = "Through binding with IR, insulin aﬀects glycometabolism and
 food intake."
 complex(p(HGNC:INS),p(HGNC:INSR)) -- bp(GO:"carbohydrate metabolic process")
-complex(p(HGNC:INS),p(HGNC:INSR)) -- a(MESH:Eating)
+complex(p(HGNC:INS),p(HGNC:INSR)) -- bp(MESH:Eating)
 
 SET Evidence = "In the central nervous system, insulin plays a
 role in learning and memory processes and is associated
@@ -223,7 +223,7 @@ p(HGNC:INS) -- bp(GO:learning)
 p(HGNC:INS) -- bp(GO:memory)
 SET MeSHAnatomy = "Hippocampus"
 p(HGNC:INS) -> bp(GO:"long-term synaptic potentiation")
-UNSET Hippocampus
+UNSET MeSHAnatomy
 
 SET Evidence = "Insulin treatment has been shown
 to have a positive eﬀect on nervous system development and
@@ -241,7 +241,7 @@ acid protein, has been conﬁrmed to exert a neuroprotective and
 proliferative function through the promotion of cell survival,
 prevention of apoptosis, and stimulation of neurogenesis in
 regions such as the hippocampus."
-p(HGNC:IGF1) -> a(MESH:Neuroprotection)
+p(HGNC:IGF1) -> bp(MESH:Neuroprotection)
 p(HGNC:IGF1) -> bp(GO:"generation of neurons")
 p(HGNC:IGF1) -| bp(GO:"neuron apoptotic process")
 SET MeSHAnatomy = "Hippocampus"
