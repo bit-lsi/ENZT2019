@@ -1,0 +1,150 @@
+#######################
+# Document Properties #
+#######################
+SET DOCUMENT Copyright   = "Copyright © 2018 Fraunhofer Institute SCAI, All rights reserved."
+SET DOCUMENT Licenses    = "CC BY 4.0"
+SET DOCUMENT ContactInfo = "c.brown@scai.fraunhofer.de"
+
+SET DOCUMENT Name        = "M1 muscarinic acetylcholine receptor in Alzheimer’s disease"
+SET DOCUMENT Version     = "1.0.0"
+SET DOCUMENT Authors     = "Charly Brown"
+SET DOCUMENT Description = "This file encodes the article M1 muscarinic acetylcholine receptor in Alzheimer’s disease by Jiang et al, 2014"
+
+##############
+# Namespaces #
+##############
+
+# Namespaces hosted on https://github.com/pharmacome/terminology
+# --------------------------------------------------------------
+# DEFINE NAMESPACE CHEBI          AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/chebi-names.belns"
+# DEFINE NAMESPACE DRUGBANK       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/drugbank-names.belns"
+# DEFINE NAMESPACE DOID           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c0c576e3d3ab9b25a3982251a4ee2fd7c49e1679/external/doid-names.belns"
+# DEFINE NAMESPACE ECCODE         AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/ec-code.belns"
+# DEFINE NAMESPACE FB             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/fb-names.belns"
+# DEFINE NAMESPACE HBP            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/export/hbp-names.belns"
+DEFINE NAMESPACE HGNC           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc-names.belns"
+DEFINE NAMESPACE HGNCGENEFAMILY AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hgnc.genefamily-names.belns"
+# DEFINE NAMESPACE HP             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/hp-names.belns"
+DEFINE NAMESPACE GO             AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/go-names.belns"
+# DEFINE NAMESPACE INTERPRO       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/interpro-names.belns"
+DEFINE NAMESPACE MESH           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mesh-names.belns"
+# DEFINE NAMESPACE MGI            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mgi-names.belns"
+# DEFINE NAMESPACE MIRBASE        AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/mirbase-names.belns"
+# DEFINE NAMESPACE NCBIGENE       AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/ncbigene.belns"
+# DEFINE NAMESPACE PFAM           AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/pfam-names.belns"
+# DEFINE NAMESPACE RGD            AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/rgd-names.belns"
+
+# Namespaces hosted on https://github.com/sorgerlab/famplex
+# ---------------------------------------------------------
+# DEFINE NAMESPACE FPLX           AS URL "https://raw.githubusercontent.com/sorgerlab/famplex/d9ec0526c20795146a9a6aef17496efe1a36cac6/export/famplex.belns"
+
+# Namespaces defined with regular expressions
+# -------------------------------------------
+# DEFINE NAMESPACE DBSNP          AS PATTERN "rs[0-9]+"
+# DEFINE NAMESPACE TAXONOMY       AS PATTERN "^\d+$"
+# DEFINE NAMESPACE UNIPROT        AS PATTERN "^([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?$"
+# DEFINE NAMESPACE PUBCHEM        AS PATTERN "^\d+$"
+
+###############
+# Annotations #
+###############
+
+# Annotations defined with regular expressions
+# --------------------------------------------
+DEFINE ANNOTATION Species       AS PATTERN "^\d+$"
+
+# Annotations hosted on https://arty.scai.fraunhofer.de/artifactory/bel/annotation
+# --------------------------------------------------------------------------------
+DEFINE ANNOTATION Anatomy       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/anatomy/anatomy-20170511.belanno"
+# DEFINE ANNOTATION CellLine      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell-line/cell-line-20170511.belanno"
+# DEFINE ANNOTATION CellStructure AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell-structure/cell-structure-20170511.belanno"
+# DEFINE ANNOTATION Cell          AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/cell/cell-20170511.belanno"
+# DEFINE ANNOTATION Confidence    AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/confidence/confidence-1.0.0.belanno"
+# DEFINE ANNOTATION Disease       AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/disease/disease-20170511.belanno"
+# DEFINE ANNOTATION Gender        AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/gender/gender-1.0.0.belanno"
+# DEFINE ANNOTATION MeSHAnatomy   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-anatomy/mesh-anatomy-20170511.belanno"
+# DEFINE ANNOTATION MeSHDisease   AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/mesh-diseases/mesh-diseases-20170511.belanno"
+# DEFINE ANNOTATION Subgraph      AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/neurommsig/neurommsig-1.0.3.belanno"
+# DEFINE ANNOTATION TextLocation  AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/text-location/text-location-1.0.1.belanno"
+
+
+##############
+# Statements #
+##############
+
+SET Citation = {"PubMed", "25652642"}
+
+SET Evidence = "Advances in molecular pathogenesis suggest that the chronic inflammation is a shared mechanism in the initiation and progression of multiple neurodegenerative diseases with diverse clinical manifestations such as Alzheimer’s disease (AD) and multiple sclerosis (MS)."
+
+bp(GO:"chronic inflammatory response") pos path(MESH: "Alzhimer's Disease")
+bp(GO:"chronic inflammatory response") pos path(MESH: "Multiple sclerosis")
+
+SET Evidence ="A predominant consequence of increased inflammatory signaling is the upregulation of the transcription factor, nuclear factor-kappa B (NF–κB) with subsequent neuroprotective or deleterious effects depending on the strength of the signal and the type of NF–κB dimers activated."
+
+bp(GO:"inflammatory response") -> p(HGNCGENEFAMILY: "NF-kappa B complex subunits")
+
+SET Evidence ="Neurodegenerative diseases refer to those conditions in which neurons in the brain and spinal cord undergo progressive degeneration and eventual death. "
+
+SET Anatomy = {"spinal cord", "Brain"}
+
+path(MESH: "Neurodegenerative Diseases") pos path(MESH: "neuron death")
+
+UNSET Anatomy
+
+SET Evidence ="Examples of neurodegenerative diseases include Alzheimer’s disease (AD), multiple sclerosis (MS), Parkinson’s disease (PD), amyotrophic lateral sclerosis (ALS) and Huntington disease (HD) [1]. Although the genetic and environmental factors that initiate degeneration differ among these diseases, a shared biochemical cascade of inflammatory events plays a central role in mediating the neuronal cell loss."
+
+bp(GO: "inflammatory response") -- path(MESH: "Alzheimer Disease")
+bp(GO: "inflammatory response") -- path(MESH: "Multiple sclerosis")
+bp(GO: "inflammatory response") -- path(MESH: "Parkinson disease")
+bp(GO: "inflammatory response") -- path(MESH: "Huntington disease")
+bp(GO: "inflammatory response") -- path(MESH: "neuronal Cell death")
+
+SET Evidence ="The transcription factor nuclear factor-κB (NF-κB) is a critical regulator of immune and inflammatory responses"
+
+p(HGNCGENEFAMILY:"NF-kappa B complex subunits") regulates path(MESH: "inflammatory response")
+p(HGNCGENEFAMILY:"NF-kappa B complex subunits") regulates path(MESH: "immune system")
+
+
+SET Evidence = "In mammals, the NF-κB/Rel family comprises five members;
+p50, p52, p65 (Rel-A), c-Rel and Rel-B proteins, that form homo or hetero-dimers and remain in an inactive form in complex with the inhibitory molecules called the IκB proteins in resting cells. "
+
+SET Species = {"9606"}
+
+p(HGNCGENEFAMILY: "NF-kappa B complex subunits") hasMembers list(p(HGNC:NFKB1), p(HGNC:NFKB2), p(HGNC:REL), p(HGNC:RELA), p(HGNC:RELB))
+
+UNSET Species
+
+SET Evidence = "Activation of IKK leads to IKKβ mediated phosphorylation of IκB proteins followed by ubiquitination and degradation by proteasomes releasing the NF–κB dimers from the inhibitory complex"
+
+complex(HGNCGENEFAMILY:"IKK complex") hasMembers list(p(HGNC:CHUK), p(HGNC:IKBKB), p(HGNC:IKBKG))
+act(complex(HGNCGENEFAMILY:"IKK complex")) -> p(HGNC:IKBKB)
+p(HGNC:IKBKB) -> p(HGNC:CHUK,pmod(Ph))
+p(HGNC:CHUK) -> p(HGNC:CHUK, pmod(UbK48))
+
+SET Evidence = "Glutamate induced stimulation of cerebellar granule cells via the N-methyl-D-aspartate (NMDA) receptor activate p65:p50 dimers and enhance transactivation of pro-apoptotic factors [16]."
+
+SET Anatomy = {"Cerebral"}
+SET Cell = {"granular"}
+
+complex(GO:"NF-kappaB p50/p65 complex") hasMembers list(p(HGNC:"NFKB1"), p(HGNC:"RELA"))
+a(CHEBI: "(5-L-Glutamyl)-L-glutamate") pos act(p(GO:"NMDA glutamate receptor activity"))
+p(GO:"NMDA selective glutamate receptor complex") pos complex(GO:"NF-kappaB p50/p65 complex")
+
+UNSET Cell
+UNSET Anatomy
+
+SET Evidence = "In contrast, IL-1β stimulation of neurons mediates neuroprotection by activating c-rel containing dimers and transactivation of anti-apoptotic factors"
+
+p(MESH:"IL1B protein, human") pos act(p(HGNC:"REL"))
+
+SET Evidence = "Pathologically AD affected brain exhibits deposits of amyloid-beta (Aβ) as neuritic plaques (NPs) and hyperphosphorylated aggregated tau protein as neurofibrillary tangles (NFTs)."
+
+path(MESH: "Alzheimer Disease") -- act(p(HGNC:"APP"))
+p(HGNC:"APP") isA p(MESH:"Plaque, Amyloid")
+path(MESH: "Alzhimer Disease") -> a(p(HGNC:"MAPT"), pmod(P))
+a(p(HGNC:"MAPT"), pmod(P)) isA p(MESH:"Neurofibrillary Tangles")
+
+SET Evidence = "Aβ has been shown to upregulate APOE in astroglial cells."
+
+SET Anatomy = {"astrocyte"}
+a(p(HGNC:"APP")) pos a(p(HGNC:"APOE"))
