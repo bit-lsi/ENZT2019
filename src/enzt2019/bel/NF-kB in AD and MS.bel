@@ -34,11 +34,11 @@ DEFINE NAMESPACE MESH AS URL "https://raw.githubusercontent.com/pharmacome/termi
  #DEFINE NAMESPACE PFAM AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/pfam-names.belns"
  #DEFINE NAMESPACE RGD AS URL "https://raw.githubusercontent.com/pharmacome/terminology/c328ad964c08967a0417a887510b97b965a62fa5/external/rgd-names.belns"
 
- Namespaces hosted on https://github.com/sorgerlab/famplex
+# Namespaces hosted on https://github.com/sorgerlab/famplex
 # ---------------------------------------------------------
  #DEFINE NAMESPACE FPLX AS URL "https://raw.githubusercontent.com/sorgerlab/famplex/d9ec0526c20795146a9a6aef17496efe1a36cac6/export/famplex.belns"
 
- Namespaces defined with regular expressions
+# Namespaces defined with regular expressions
 # -------------------------------------------
  #DEFINE NAMESPACE DBSNP AS PATTERN "rs[0-9]+"
  #DEFINE NAMESPACE TAXONOMY AS PATTERN "^\d+$"
@@ -51,7 +51,7 @@ DEFINE NAMESPACE MESH AS URL "https://raw.githubusercontent.com/pharmacome/termi
 
 # Annotations defined with regular expressions
 # --------------------------------------------
-DEFINE ANNOTATION Species AS PATTERN "^\d+$"
+# DEFINE ANNOTATION Species AS PATTERN "^\d+$"
 
  #Annotations hosted on https://arty.scai.fraunhofer.de/artifactory/bel/annotation
 # --------------------------------------------------------------------------------
@@ -107,7 +107,7 @@ p(HGNCGENEFAMILY:"NF-kappa B complex subunits") regulates path(MESH: "Immune Sys
 SET Evidence = "In mammals, the NF-κB/Rel family comprises five members;
 p50, p52, p65 (Rel-A), c-Rel and Rel-B proteins, that form homo or hetero-dimers and remain in an inactive form in complex with the inhibitory molecules called the IκB proteins in resting cells. "
 
-SET Species = {"9606"}
+SET Species = "9606"
 
 p(HGNCGENEFAMILY: "NF-kappa B complex subunits") hasMembers list(p(HGNC:NFKB1), p(HGNC:NFKB2), p(HGNC:REL), p(HGNC:RELA), p(HGNC:RELB))
 
@@ -122,8 +122,8 @@ p(HGNC:CHUK) -> p(HGNC:CHUK, pmod(UbK48))
 
 SET Evidence = "Glutamate induced stimulation of cerebellar granule cells via the N-methyl-D-aspartate (NMDA) receptor activate p65:p50 dimers and enhance transactivation of pro-apoptotic factors [16]."
 
-SET Anatomy = {"cerebral cortex"}
-SET Cell = {"granular cell"}
+SET Anatomy = "cerebral cortex"
+SET Cell = "granular cell"
 
 complex(GO:"NF-kappaB p50/p65 complex") hasMembers list(p(HGNC:"NFKB1"), p(HGNC:"RELA"))
 a(CHEBI: "(5-L-Glutamyl)-L-glutamate") pos act(p(GO:"NMDA glutamate receptor activity"))
@@ -145,5 +145,14 @@ p(HGNC:"MAPT", pmod(P)) isA p(MESH:"Neurofibrillary Tangles")
 
 SET Evidence = "Aβ has been shown to upregulate APOE in astroglial cells."
 
-SET Cell = {"astrocyte"}
+SET Cell = "astrocyte"
+
 p(HGNC:"APP") pos p(HGNC:"APOE")
+
+UNSET Cell
+
+SET Evidence = "A number of physiological stimuli including membrane depolarization or glutamergic signal transduction lead to rapid activation of the inducible NF-κB localized in the synapses, cytoplasm and dendrites of the neurons."
+
+
+bp(GO:"membrane depolarization") pos p(HGNCGENEFAMILY:"NF-kappa B complex subunits")
+bp(GO:"")
