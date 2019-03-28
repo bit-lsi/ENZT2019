@@ -52,7 +52,7 @@ DEFINE NAMESPACE MESH AS URL "https://raw.githubusercontent.com/pharmacome/termi
 # Annotations defined with regular expressions
 # --------------------------------------------
 # DEFINE ANNOTATION Species AS PATTERN "^\d+$"
-
+DEFINE ANNOTATION Species AS LIST{"9606","10090"}
  #Annotations hosted on https://arty.scai.fraunhofer.de/artifactory/bel/annotation
 # --------------------------------------------------------------------------------
 DEFINE ANNOTATION Anatomy AS URL "https://arty.scai.fraunhofer.de/artifactory/bel/annotation/anatomy/anatomy-20170511.belanno"
@@ -153,6 +153,14 @@ UNSET Cell
 
 SET Evidence = "A number of physiological stimuli including membrane depolarization or glutamergic signal transduction lead to rapid activation of the inducible NF-κB localized in the synapses, cytoplasm and dendrites of the neurons."
 
-
 bp(GO:"membrane depolarization") pos p(HGNCGENEFAMILY:"NF-kappa B complex subunits")
-bp(GO:"")
+bp(GO:"G protein-coupled glutamate receptor signaling pathway") pos p(HGNCGENEFAMILY: "NF-kappa B complex subunits")
+
+SET Evidence = "Complete abrogation of the DNA binding ability of NF-κB factors induces apoptosis of the neuronal cells. Cell death is preceded by reduction in the NF-κB regulated transcription of anti-apoptotic genes suggesting that a minimal threshold of NF-κB activity is needed for neuronal survival [6]"
+
+SET Cell = "neuron"
+
+act(p(HGNC: "NF-kappa B complex subunits"), ma(GO: "positive regulation of DNA binding")) -> path(GO: "neuron death")
+p(HGNCGENEFAMILY: "NF-kappa B complex subunits") neg act(g(MESH: "Apoptosis", ma(tscript)))
+
+UNSET Cell
